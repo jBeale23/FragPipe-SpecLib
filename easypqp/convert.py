@@ -701,7 +701,7 @@ def read_mzml_or_mzxml_impl(input_map, psms, theoretical, max_delta_ppm, filetyp
 	nthreads = min(os.cpu_count(), 5)
 	def f(psms):
 		peaks_list = []
-		for scan_id, modified_peptide, precursor_charge in psms.itertuples(index=None):
+		for scan_id, modified_peptide, precursor_charge in pd.Dataframe(psms).itertuples(index=False):
 			peaks_list.append(
 				psm_df(input_map, theoretical, max_delta_ppm, scan_id, modified_peptide, precursor_charge))
 		return peaks_list
