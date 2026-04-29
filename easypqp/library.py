@@ -16,6 +16,7 @@ import numpy as np
 import pandas as pd
 
 # alignment
+from sklearn.base import BaseEstimator
 from sklearn import preprocessing
 import sklearn.isotonic
 import sklearn.linear_model
