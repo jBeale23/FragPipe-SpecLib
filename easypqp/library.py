@@ -194,7 +194,7 @@ def lowess_iso(x, y, lowess_frac):
     timestamped_echo(e)
     return interp1d(lwf_x, lwf_y, bounds_error=False, fill_value="extrapolate")
 
-class LowessIsoEstimator:
+class LowessIsoEstimator(BaseEstimator):
   def __init__(self, lowess_frac):
     self.lowess_frac = lowess_frac
 
